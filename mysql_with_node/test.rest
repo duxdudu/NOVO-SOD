@@ -1,0 +1,30 @@
+GET http://localhost:3000/api/products
+
+###
+GET http://localhost:3000/api/products/3
+
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "name": "umugati",
+    "price": 100,
+    "qty": 40,
+    "description": "umugati 4 description"
+}
+
+###
+PUT http://localhost:3000/api/products/6
+Content-Type: application/json
+
+{
+    "name": "umugati UPDATE 2",
+    "price": 400,
+    "qty": 50,
+    "description": "Product 4 description"
+}
+
+###
+
+DELETE http://localhost:3000/api/products/6

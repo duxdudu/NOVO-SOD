@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures & Algorithms</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-transform: capitalize;
+        }
+        h2 {
+            color: #3498db;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        div:not(h3 + div) {
+            background: #fff;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h3 + div {
+            background: #f8f9fa;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+        h3 + div:hover {
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>data structure and algorithm with javascript</h1>
+     <h2>question</h2>
+     <div>
+       <h3> 1.Create a stack and add the names of your 3 favorite fruits. Remove the last fruit and display the remaining ones.<br></h3>
+      <script>
+        // Create a stack for fruits
+        const fruits = ['Apple', 'Banana', 'Orange'];
+        console.log('Initial fruits:', fruits);
+        
+        // Create output element
+        const fruitOutput = document.createElement('div');
+        fruitOutput.innerHTML = `Initial fruits: ${fruits.join(', ')}<br>`;
+        
+        // Remove last fruit
+        fruits.pop();
+        console.log('After removing last fruit:', fruits);
+        fruitOutput.innerHTML += `After removing last fruit: ${fruits.join(', ')}`;
+        
+        // Insert after the first h3
+        document.querySelector('h3').after(fruitOutput);
+      </script>
+        <h3>2.Simulate a queue for students entering the classroom. Add 4 names, then remove the first 2. Print the final queue.</h3>
+      <script>
+        // Create a queue for students
+        const students = ['John', 'Alice', 'Bob', 'Emma'];
+        console.log('Initial queue:', students);
+        
+        const queueOutput = document.createElement('div');
+        queueOutput.innerHTML = `Initial queue: ${students.join(', ')}<br>`;
+        
+        // Remove first 2 students
+        students.shift();
+        students.shift();
+        console.log('Final queue:', students);
+        queueOutput.innerHTML += `Final queue: ${students.join(', ')}`;
+        
+        // Insert after the second h3
+        document.querySelectorAll('h3')[1].after(queueOutput);
+      </script>
+         <h3>3.Write your own pseudocode for preparing a cup of coffee. Then convert it into simple JavaScript console log statements.</h3>
+       <script>
+        const coffeeSteps = [
+          'Boil water',
+          'Add coffee powder to cup',
+          'Pour hot water into cup',
+          'Add sugar and milk if desired',
+          'Stir well',
+          'Coffee is ready!'
+        ];
+        
+        const coffeeOutput = document.createElement('div');
+        coffeeOutput.innerHTML = '<b>Coffee Preparation Steps:</b><br>';
+        
+        coffeeSteps.forEach((step, index) => {
+          console.log(`Step ${index + 1}: ${step}`);
+          coffeeOutput.innerHTML += `Step ${index + 1}: ${step}<br>`;
+        });
+        
+        document.querySelectorAll('h3')[2].after(coffeeOutput);
+      </script>
+          <h3>4.Create a decision-based flow using if-else to determine what meal to eat based on the time of day (morning, afternoon, evening).</h3>
+        <script>
+          const hour = new Date().getHours();
+          let meal;
+          
+          if (hour < 12) {
+            meal = 'Breakfast - Have some eggs and toast!';
+          } else if (hour < 17) {
+            meal = 'Lunch - Time for a sandwich!';
+          } else {
+            meal = 'Dinner - Pasta would be nice!';
+          }
+          
+          console.log(`Current time: ${hour}:00, Recommended meal:`, meal);
+          
+          const mealOutput = document.createElement('div');
+          mealOutput.innerHTML = `Current time: ${hour}:00<br>Recommended meal: ${meal}`;
+          document.querySelectorAll('h3')[3].after(mealOutput);
+        </script>
+    <h3>5.You have a list of books on a table:
+        ["Math", "Science", "English", "History", "Art"]
+        You want to search for the book titled "History" using linear search.
+        Write a program to find the book and print its position (index).</h3>
+        <script>
+          const books = ['Math', 'Science', 'English', 'History', 'Art'];
+          const searchBook = 'History';
+          let foundIndex = -1;
+          
+          for (let i = 0; i < books.length; i++) {
+            if (books[i] === searchBook) {
+              foundIndex = i;
+              break;
+            }
+          }
+          
+          console.log(`Searching for book: ${searchBook}`);
+          console.log(`Found at index: ${foundIndex}`);
+          
+          const searchOutput = document.createElement('div');
+          searchOutput.innerHTML = `Searching for book: ${searchBook}<br>`;
+          searchOutput.innerHTML += `Found at index: ${foundIndex}`;
+          document.querySelectorAll('h3')[4].after(searchOutput);
+        </script>
+     </div>
+</body>
+</html>
